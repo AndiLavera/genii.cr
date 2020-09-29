@@ -5,59 +5,59 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = {
-  'Container-2635': {
+  'Container-2412': {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     fillSpace: 'no',
-    padding: '["40", "40", "40", "40"]',
-    margin: '["0", "0", "0", "0"]',
-    background: '{"r" => 255, "g" => 255, "b" => 255, "a" => 1}',
-    color: '{"r" => 0, "g" => 0, "b" => 0, "a" => 1}',
+    padding: '40px 40px 40px 40px',
+    margin: '0px 0px 0px 0px',
+    background: rbga(255, 255, 255, 1),
+    color: rbga(0, 0, 0, 1),
     width: '800px',
     height: 'auto',
   },
-  'Container-9083': {
+  'Container-8620': {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     fillSpace: 'no',
-    padding: '["40", "40", "40", "40"]',
-    margin: '["0", "0", "40", "0"]',
-    background: '{"r" => 255, "g" => 255, "b" => 255, "a" => 1}',
-    color: '{"r" => 0, "g" => 0, "b" => 0, "a" => 1}',
+    padding: '40px 40px 40px 40px',
+    margin: '0px 0px 40px 0px',
+    background: rbga(255, 255, 255, 1),
+    color: rbga(0, 0, 0, 1),
     width: '100%',
     height: 'auto',
   },
-  'Container-9175': {
+  'Container-3957': {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     fillSpace: 'no',
-    padding: '["0", "20", "0", "20"]',
-    margin: '["0", "0", "0", "0"]',
-    background: '{"r" => 255, "g" => 255, "b" => 255, "a" => 1}',
-    color: '{"r" => 0, "g" => 0, "b" => 0, "a" => 1}',
+    padding: '0px 20px 0px 20px',
+    margin: '0px 0px 0px 0px',
+    background: rbga(255, 255, 255, 1),
+    color: rbga(0, 0, 0, 1),
     width: '40%',
     height: '100%',
   },
-  'Typography-4439': {
+  'Typography-4526': {
     fontSize: '23',
     textAlign: 'left',
     fontWeight: '400',
-    color: '{"r" => 92, "g" => 90, "b" => 90, "a" => 1}',
-    margin: '[0, 0, 0, 0]',
+    color: rbga(92, 90, 90, 1),
+    margin: '0px 0px 0px 0px',
     text: 'Craft.js is a React framework for building powerful & feature-rich drag-n-drop page editors.',
   },
-  'Container-991': {
+  'Container-9431': {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
     fillSpace: 'no',
-    padding: '["0", "20", "0", "20"]',
-    margin: '["0", "0", "0", "0"]',
-    background: '{"r" => 255, "g" => 255, "b" => 255, "a" => 1}',
-    color: '{"r" => 0, "g" => 0, "b" => 0, "a" => 1}',
+    padding: '0px 20px 0px 20px',
+    margin: '0px 0px 0px 0px',
+    background: rbga(255, 255, 255, 1),
+    color: rbga(0, 0, 0, 1),
     width: '60%',
     height: '100%',
   },
@@ -69,21 +69,20 @@ function Home(props) {
 
   return (
     <>
-      <Container className={classes[`Container-2635`]}>
-<Container className={classes[`Container-9083`]}>
-<Container className={classes[`Container-9175`]}>
-<Typography className={classes[`Typography-4439`]}>
+      <Container className={classes[`Container-2412`]}>
+        <Container className={classes[`Container-8620`]}>
+          <Container className={classes[`Container-3957`]}>
+            <Typography className={classes[`Typography-4526`]}>
 Craft.js is a React framework for building powerful & feature-rich drag-n-drop page editors.
-</ Typography>
-</ Container>
-<Container className={classes[`Container-991`]}>
-<Typography className={classes[`Typography-6506`]}>
+            </ Typography>
+          </ Container>
+          <Container className={classes[`Container-9431`]}>
+            <Typography className={classes[`Typography-916`]}>
 Everything you see here, including the editor, itself is made of React components. Craft.js comes only with the building blocks for a page editor; it provides a drag-n-drop system and handles the way user components should be rendered, updated and moved, among other things. <br /> <br /> You control the way your editor looks and behave.
-</ Typography>
-</ Container>
-</ Container>
-</ Container>
-
+            </ Typography>
+          </ Container>
+        </ Container>
+      </ Container>
     </>
   );
 }
