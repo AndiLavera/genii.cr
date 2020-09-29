@@ -33,27 +33,14 @@ class Page
     jsx += component.close_tag
   end
 
-  def generate_space_depth(depth : Int32) : String
-    spaces = ""
-    depth.times do
-      spaces += " "
-    end
-
-    spaces
-  end
-
   def generate : Bool
     contents = generate_jsx(json["ROOT"], depth: 6)
     @contents = contents[0..-2] # Remove the final line break
-    !!File.write("test.jsx", result)
+    !!File.write("page.jsx", result)
   end
 
   private def result : String
     Kilt.render("src/jsx/page.tsx.ecr")
-  end
-
-  private def template : String
-    "../jsx/page.tsx.erb"
   end
 
   private def create_component(json_component) : Component
@@ -66,6 +53,17 @@ class Page
 
   private def add_imports(component)
     @imports << component.type
+  end
+
+  # Generate a string with x spaces.
+  # Used from proper formatting
+  private def generate_space_depth(depth : Int32) : String
+    spaces = ""
+    depth.times do
+      spaces += " "
+    end
+
+    spaces
   end
 
   # Returns something like:
