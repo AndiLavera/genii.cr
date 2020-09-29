@@ -1,0 +1,22 @@
+<%- unless @imports.empty? -%>
+import {
+  <%= generate_imports() %>
+} from '@material-ui/core';
+<%- end -%>
+import { withStyles } from '@material-ui/core/styles';
+
+const styles = {
+<%= generate_styles() %>
+}
+
+function Home(props) {
+  const { classes } = props;
+
+  return (
+    <>
+      <%= @contents %>
+    </>
+  );
+}
+
+export default withStyles(styles)(Home);

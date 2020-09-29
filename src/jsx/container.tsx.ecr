@@ -1,0 +1,31 @@
+import React from 'react';
+import { Container as MaterialContainer } from '@material-ui/core';
+
+const useStyles = makeStyles({
+  root: {
+    flexDirection: <%= @default_flex_direction %>,
+    alignItems: <%= @default_align_item %>,
+    justifyContent: <%= @default_justify_content %>,
+    fillSpace: <%= @default_fill_space %>,
+    padding: <%= @default_padding %>,
+    margin: <%= @default_margin %>,
+    background: {
+      r: <%= @default_background_r %>, g: <%= @default_background_g %>, b: <%= @default_background_b %>, a: <%= @default_background_a %>,
+    },
+    color: {
+      r: <%= @default_color_r %>, g: <%= @default_color_g %>, b: <%= @default_color_b %>, a: <%= @default_color_a %>,
+    },
+    shadow: <%= @default_shadow %>,
+    radius: <%= @default_radius %>,
+    width: <%= @default_width %>,
+    height: <%= @default_height %>,
+  }
+};
+
+export const Container = (props) => {
+  return (
+    <MaterialContainer className={classes.root}>
+      {children}
+    </MaterialContainer>
+  );
+};
