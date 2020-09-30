@@ -1,6 +1,12 @@
 require "random"
 
-module JsonComponent
+class JsonComponent
+  getter json : JSON::Any
+
+  def initialize(json : JSON::Any)
+    @json = json
+  end
+
   def type
     json["type"]["resolvedName"].as_s
   end
@@ -46,28 +52,33 @@ module JsonComponent
   end
 
   def style_name : String
-    @style_name ||= "#{type}-#{Random::Secure.rand(10_000)}"
+    @style_name ||= "#{type}_#{Random::Secure.rand(10_000)}"
+  end
+
+  def text_with_depth(depth : Int32) : String
+    spaces = ""
+    (depth + 2).times { spaces += " " }
+
+    text? ? "#{spaces}#{text}\n" : ""
   end
 
   def open_tag : String
     if props.size == 0 && text.nil?
       "<#{type}>"
     else
-      tag = "<#{type} className={classes[`#{style_name}`]}>\n"
-      tag += "#{text}\n" if text?
-      tag
+      "<#{type} className={classes.#{style_name}}>\n"
     end
   end
 
   def close_tag : String
-    "</ #{type}>\n"
+    "</#{type}>\n"
   end
 
   def no_children_tag : String
     if props.size == 0
       "<#{type} />\n"
     else
-      "<#{type} className={classes[`#{style_name}`]} />\n"
+      "<#{type} className={classes.#{style_name}} />\n"
     end
   end
 end
