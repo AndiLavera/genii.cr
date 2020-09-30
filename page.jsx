@@ -9,7 +9,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
-  Container_850: {
+  Container_470: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     width: '800px',
     height: 'auto',
   },
-  Container_9336: {
+  Container_9951: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -33,7 +33,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_2432: {
+  Container_7503: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -45,7 +45,7 @@ const useStyles = makeStyles({
     width: '40%',
     height: '100%',
   },
-  Text_1437: {
+  Text_7024: {
     fontSize: '23',
     textAlign: 'left',
     fontWeight: '400',
@@ -53,7 +53,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 0px 0px',
     text: 'Craft.js is a React framework for building powerful & feature-rich drag-n-drop page editors.',
   },
-  Container_1690: {
+  Container_182: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -65,7 +65,7 @@ const useStyles = makeStyles({
     width: '60%',
     height: '100%',
   },
-  Text_398: {
+  Text_9600: {
     fontSize: '14',
     textAlign: 'left',
     fontWeight: '400',
@@ -73,7 +73,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 0px 0px',
     text: 'Everything you see here, including the editor, itself is made of React components. Craft.js comes only with the building blocks for a page editor; it provides a drag-n-drop system and handles the way user components should be rendered, updated and moved, among other things. <br /> <br /> You control the way your editor looks and behave.',
   },
-  Container_7416: {
+  Container_3302: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -85,7 +85,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_4025: {
+  Container_2259: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -97,7 +97,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_4466: {
+  Container_2814: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -109,7 +109,7 @@ const useStyles = makeStyles({
     width: '350px',
     height: '250px',
   },
-  Container_9129: {
+  Container_2172: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -122,7 +122,7 @@ const useStyles = makeStyles({
     width: '90%',
     height: '90%',
   },
-  Container_7520: {
+  Container_1201: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -135,7 +135,7 @@ const useStyles = makeStyles({
     width: '80%',
     height: '80%',
   },
-  Container_6400: {
+  Container_1775: {
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
@@ -148,7 +148,7 @@ const useStyles = makeStyles({
     width: '60%',
     height: '60%',
   },
-  Container_8775: {
+  Container_2340: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -160,7 +160,7 @@ const useStyles = makeStyles({
     width: '55%',
     height: '100%',
   },
-  Text_1335: {
+  Text_2953: {
     fontSize: '20',
     textAlign: 'left',
     fontWeight: '500',
@@ -168,7 +168,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 18px 0px',
     text: 'Design complex components',
   },
-  Text_8029: {
+  Text_6557: {
     fontSize: '14',
     textAlign: 'left',
     fontWeight: '400',
@@ -176,7 +176,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 0px 0px',
     text: 'You can define areas within your React component which users can drop other components into. <br/><br />You can even design how the component should be edited — content editable, drag to resize, have inputs on toolbars — anything really.',
   },
-  Container_2577: {
+  Container_3211: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -188,7 +188,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_4584: {
+  Container_6706: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -200,7 +200,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Text_7023: {
+  Text_2971: {
     fontSize: '23',
     textAlign: 'left',
     fontWeight: '500',
@@ -208,7 +208,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 0px 0px',
     text: 'Programmatic drag & drop',
   },
-  Text_3669: {
+  Text_3644: {
     fontSize: '14',
     textAlign: 'left',
     fontWeight: '400',
@@ -216,7 +216,7 @@ const useStyles = makeStyles({
     margin: '0px 0px 0px 0px',
     text: 'Govern what goes in and out of your components',
   },
-  Container_8518: {
+  Container_3500: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -228,7 +228,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_347: {
+  Container_9230: {
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -240,7 +240,7 @@ const useStyles = makeStyles({
     width: '45%',
     height: 'auto',
   },
-  Custom1_149: {
+  Custom1_9086: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -253,7 +253,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: 'auto',
   },
-  Container_8387: {
+  Container_861: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -265,7 +265,7 @@ const useStyles = makeStyles({
     width: '55%',
     height: 'auto',
   },
-  Custom2_2455: {
+  Custom2_352: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -278,7 +278,7 @@ const useStyles = makeStyles({
     width: '100%',
     height: '125px',
   },
-  Custom3_8482: {
+  Custom3_8360: {
     flexDirection: 'column',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
@@ -294,58 +294,58 @@ const useStyles = makeStyles({
 });
 
 function Home(props) {
-  const classes = useStyles();
+  const classes = useStyles(props);
 
   return (
     <>
-      <Container className={classes.Container_850}>
-        <Container className={classes.Container_9336}>
-          <Container className={classes.Container_2432}>
-            <Text className={classes.Text_1437}>
+      <Container className={classes.Container_470}>
+        <Container className={classes.Container_9951}>
+          <Container className={classes.Container_7503}>
+            <Text className={classes.Text_7024}>
               Craft.js is a React framework for building powerful & feature-rich drag-n-drop page editors.
             </Text>
           </Container>
-          <Container className={classes.Container_1690}>
-            <Text className={classes.Text_398}>
+          <Container className={classes.Container_182}>
+            <Text className={classes.Text_9600}>
               Everything you see here, including the editor, itself is made of React components. Craft.js comes only with the building blocks for a page editor; it provides a drag-n-drop system and handles the way user components should be rendered, updated and moved, among other things. <br /> <br /> You control the way your editor looks and behave.
             </Text>
           </Container>
         </Container>
-        <Container className={classes.Container_7416}>
-          <Container className={classes.Container_4025}>
-            <Container className={classes.Container_4466}>
-              <Container className={classes.Container_9129}>
-                <Container className={classes.Container_7520}>
-                  <Container className={classes.Container_6400} />
+        <Container className={classes.Container_3302}>
+          <Container className={classes.Container_2259}>
+            <Container className={classes.Container_2814}>
+              <Container className={classes.Container_2172}>
+                <Container className={classes.Container_1201}>
+                  <Container className={classes.Container_1775} />
                 </Container>
               </Container>
             </Container>
-            <Container className={classes.Container_8775}>
-              <Text className={classes.Text_1335}>
+            <Container className={classes.Container_2340}>
+              <Text className={classes.Text_2953}>
                 Design complex components
               </Text>
-              <Text className={classes.Text_8029}>
+              <Text className={classes.Text_6557}>
                 You can define areas within your React component which users can drop other components into. <br/><br />You can even design how the component should be edited — content editable, drag to resize, have inputs on toolbars — anything really.
               </Text>
             </Container>
           </Container>
         </Container>
-        <Container className={classes.Container_2577}>
-          <Container className={classes.Container_4584}>
-            <Text className={classes.Text_7023}>
+        <Container className={classes.Container_3211}>
+          <Container className={classes.Container_6706}>
+            <Text className={classes.Text_2971}>
               Programmatic drag & drop
             </Text>
-            <Text className={classes.Text_3669}>
+            <Text className={classes.Text_3644}>
               Govern what goes in and out of your components
             </Text>
           </Container>
-          <Container className={classes.Container_8518}>
-            <Container className={classes.Container_347}>
-              <Custom1 className={classes.Custom1_149} />
+          <Container className={classes.Container_3500}>
+            <Container className={classes.Container_9230}>
+              <Custom1 className={classes.Custom1_9086} />
             </Container>
-            <Container className={classes.Container_8387}>
-              <Custom2 className={classes.Custom2_2455} />
-              <Custom3 className={classes.Custom3_8482} />
+            <Container className={classes.Container_861}>
+              <Custom2 className={classes.Custom2_352} />
+              <Custom3 className={classes.Custom3_8360} />
             </Container>
           </Container>
         </Container>

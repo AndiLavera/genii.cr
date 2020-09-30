@@ -32,9 +32,7 @@ module StylesGenerator
 
     @raw_styles[style].each do |key, value|
       value = to_h(value)
-      unless value.is_a? Hash(String, JSON::Any)
-        value = to_a(value)
-      end
+      value = to_a(value) unless value.is_a? Hash(String, JSON::Any)
 
       formatted_style += format_style(key, value)
     end

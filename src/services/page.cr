@@ -30,10 +30,6 @@ class Page
     Kilt.render("src/jsx/page.tsx.ecr")
   end
 
-  private def create_component(json_component) : JsonComponent
-    JsonComponent.new(json_component)
-  end
-
   private def generate_imports : String
     generate_imports!
   end
