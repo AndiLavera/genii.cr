@@ -4,13 +4,10 @@ module StylesGenerator
     formatted_styles = ""
 
     @raw_styles.keys.each do |style|
-      # Prevent 'text' from being a key
-      # Props should go in each component and not return text. We can remove this line after that fact
-      next if @raw_styles[style].size == 1 && @raw_styles[style]["text"]?
       formatted_styles += generate_style(style)
     end
 
-    remove_trailing_n_chars(formatted_styles, 1)
+    remove_trailing_n_chars(formatted_styles, 1) # Remove the trailing `\n`
   end
 
   # Returns something like:
@@ -31,6 +28,8 @@ module StylesGenerator
     formatted_style = spaces(2) + style + colon + space + open_bracket + new_line
 
     @raw_styles[style].each do |key, value|
+      next if key === "api" || key === "styles" || key === "text"
+
       value = to_h(value)
       value = to_a(value) unless value.is_a? Hash(String, JSON::Any)
 
@@ -42,13 +41,15 @@ module StylesGenerator
   end
 
   # returns something like "    height: 'auto',\n"
-  private def format_style(key : String, value : JSON::Any)
+  private def format_style(key : String, value : JSON::Any) : String
     # "    #{key}: '#{value}',\n"
     spaces(4) + key.to_s + colon + space + single_quotes(value) + comma + new_line
   end
 
   # returns something like "    background: rgba(255, 0, 0, 0.3),\n"
-  private def format_style(key : String, value : Hash(String, JSON::Any))
+  private def format_style(key : String, value : Hash(String, JSON::Any)) : String
+    return "" if value.empty?
+
     # "    #{key}: 'rbga("
     style = spaces(4) + key.to_s + colon + space + single_quote + rgba + open_parenthesis
     value.each do |_, v|
@@ -56,13 +57,15 @@ module StylesGenerator
       style += v.to_s + comma + space
     end
 
-    style = remove_trailing_n_chars(style, 2) # Remove the last `, `
+    style = remove_trailing_n_chars(style, 2) # Remove the trailing `, `
     # ")',\n"
     style += close_parenthesis + single_quote + comma + new_line
   end
 
   # returns something like "    10px 10px 10px 10px \n"
   private def format_style(key : String, value : Array(JSON::Any)) : String
+    return "" if value.map(&.to_s) == ["0", "0", "0", "0"]
+
     # "    #{key}: '"
     style = spaces(4) + key.to_s + colon + space + single_quote
     value.each do |i|
@@ -70,7 +73,7 @@ module StylesGenerator
       style += i.to_s + px + space
     end
 
-    style = remove_trailing_n_chars(style, 1) # Remove the last ` `
+    style = remove_trailing_n_chars(style, 1) # Remove the trailing ` `
     # "',\n"
     style += single_quote + comma + new_line
   end

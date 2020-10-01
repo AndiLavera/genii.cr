@@ -21,7 +21,7 @@ module JSXGenerator
   end
 
   private def add_raw_styles(component : JsonComponent)
-    @raw_styles[component.style_name] = component.props
+    (styles = component.styles) ? (@raw_styles[component.style_name] = styles) : nil
   end
 
   private def add_raw_imports(component : JsonComponent)

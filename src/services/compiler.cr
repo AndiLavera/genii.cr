@@ -2,8 +2,8 @@ require "kilt"
 require "kilt/ecr"
 require "./string_processor"
 
-class Page
-  include StringProcessor
+class Genii::Compiler
+  include ::StringProcessor
 
   getter json : JSON::Any
   getter contents : String?
@@ -16,9 +16,9 @@ class Page
     @raw_imports = [] of String
   end
 
-  def generate : Bool
+  def compile : Bool
     contents = generate_jsx(json["ROOT"], depth: 6)
-    @contents = remove_trailing_n_chars(contents, 1) # Remove the final line break
+    @contents = remove_trailing_n_chars(contents, 1) # Remove the trailing `\n`
 
     @styles = generate_styles
     @imports = generate_imports

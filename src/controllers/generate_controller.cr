@@ -1,7 +1,7 @@
 class GenerateController < ApplicationController
   def create
-    page = Page.new(page_params.validate!["page"].not_nil!)
-    page.generate
+    page = Genii::Compiler.new(page_params.validate!["page"].not_nil!)
+    page.compile
   end
 
   def page_params

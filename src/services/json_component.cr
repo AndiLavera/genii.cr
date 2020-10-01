@@ -19,6 +19,22 @@ class JsonComponent
     json["props"].as_h
   end
 
+  def styles : Hash(String, JSON::Any)?
+    (style = json["props"]["styles"]?) ? style.as_h : nil
+  end
+
+  def styles? : Bool
+    !!json["props"]["styles"]?
+  end
+
+  def api_styles : Hash(String, JSON::Any)?
+    (api = json["props"]["api"]?) ? api.as_h : nil
+  end
+
+  def api_styles? : Bool
+    !!json["props"]["api"]?
+  end
+
   def text : String?
     (text = json["props"]["text"]?) ? text.as_s : nil
   end
@@ -63,11 +79,16 @@ class JsonComponent
   end
 
   def open_tag : String
-    if props.size == 0 && text.nil?
-      "<#{type}>"
-    else
-      "<#{type} className={classes.#{style_name}}>\n"
-    end
+    # if props.size == 0 && text.nil?
+    #   "<#{type}>"
+    # else
+    #   "<#{type} className={classes.#{style_name}}>\n"
+    # end
+
+    tag = "<#{type} "
+    tag += "className={classes.#{style_name}} " if styles?
+    tag += add_api_styles
+    tag += ">\n"
   end
 
   def close_tag : String
@@ -75,10 +96,30 @@ class JsonComponent
   end
 
   def no_children_tag : String
-    if props.size == 0
-      "<#{type} />\n"
+    # if props.size == 0
+    #   "<#{type} />\n"
+    # else
+    #   "<#{type} className={classes.#{style_name}} />\n"
+    # end
+
+    tag = "<#{type} "
+    tag += "className={classes.#{style_name}}" if styles?
+    tag += add_api_styles
+    tag += " />\n"
+  end
+
+  private def add_api_styles : String
+    styles = ""
+
+    if (api = api_styles)
+      api.each do |key, value|
+        next if value.as_s.empty?
+        styles += "#{key}='#{value}' "
+      end
     else
-      "<#{type} className={classes.#{style_name}} />\n"
+      return ""
     end
+
+    styles[0...-1] # Remove trailing ` `
   end
 end
