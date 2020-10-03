@@ -1,6 +1,6 @@
 require "./helpers/*"
 
-module StringProcessor
+module Processor
   include Dictionary
   include TypeConverter
   include StylesGenerator

@@ -1,40 +1,26 @@
 require "kilt"
 require "kilt/ecr"
-require "./string_processor"
+require "./toolkit"
 
 class Genii::Compiler
-  include ::StringProcessor
+  getter toolkit_type : Symbol
+  getter toolkit : Toolkit
 
-  getter json : JSON::Any
-  getter contents : String?
-  getter styles : String?
-  getter imports : String?
-
-  def initialize(json)
-    @json = JSON.parse(json)
-    @raw_styles = {} of String => Hash(String, JSON::Any)
-    @raw_imports = [] of String
+  def initialize(json : JSON::Any)
+    @toolkit_type = :material_ui
+    @toolkit = initialize_toolkit(json)
   end
 
   def compile : Bool
-    contents = generate_jsx(json["ROOT"], depth: 6)
-    @contents = remove_trailing_n_chars(contents, 1) # Remove the trailing `\n`
-
-    @styles = generate_styles
-    @imports = generate_imports
-
-    !!(File.write("page.jsx", result))
+    @toolkit.compile
   end
 
-  private def result : String
-    Kilt.render("src/jsx/page.tsx.ecr")
-  end
-
-  private def generate_imports : String
-    generate_imports!
-  end
-
-  private def generate_styles : String
-    generate_styles!
+  private def initialize_toolkit(json : JSON::Any)
+    case toolkit_type
+    when :material_ui
+      MaterialUI.new(json)
+    else
+      raise "No Toolkit Found"
+    end
   end
 end
